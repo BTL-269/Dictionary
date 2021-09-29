@@ -12,4 +12,5 @@ tiger	hổ
 bear	gấu
 elephant	voi
 giafe	hươu cao cổ
-one	một
+one một
+apple   quả táo

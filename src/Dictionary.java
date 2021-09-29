@@ -27,4 +27,5 @@ public class Dictionary{
             listWord.add(word);
         }
     }
+
 }

@@ -42,5 +42,4 @@ public class DictionaryManagement extends Dictionary {
     public void dictionaryLookup() {
 
     }
-
 }

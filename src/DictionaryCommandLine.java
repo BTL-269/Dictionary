@@ -15,5 +15,4 @@ public class DictionaryCommandLine extends DictionaryManagement{
         insertFromCommandLine();
         showAllWords();
     }
-
 }
