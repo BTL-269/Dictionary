@@ -1,0 +1,15 @@
+hi	xin chào
+one	một
+two	hai
+three	ba
+four	bốn
+five	năm
+complete	hoàn thành
+house	nhà
+balloon	khinh khí cầu
+lion	sư tử
+tiger	hổ
+bear	gấu
+elephant	voi
+giafe	hươu cao cổ
+one	một
