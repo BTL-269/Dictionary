@@ -38,7 +38,7 @@ public class DictionaryManagement extends Dictionary {
     }
 
     /**
-     * Ver 2: Look up word from input.
+     * Ver 2: Look up word from the input.
      * @param word of string
      * @return the index of word in list
      */
