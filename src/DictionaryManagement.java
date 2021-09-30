@@ -39,19 +39,6 @@ public class DictionaryManagement extends Dictionary {
 
     /** Ver2: Look up explain from the input target. */
     public int dictionaryLookup(String target) {
-        int high = getListWord().size(), low = 0;
-        while (low < high) {
-            int mid = (low + high) / 2;
-            int value = getListWord().get(mid).getWord_target().compareTo(target);
-            if (value >= 0) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-        if (getListWord().get(low).getWord_target().compareTo(target) == 0) {
-            return low;
-        }
         return -1;
     }
 
