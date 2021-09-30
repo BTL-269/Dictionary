@@ -18,7 +18,7 @@ public class DictionaryCommandLine extends DictionaryManagement{
         showAllWords();
     }
 
-    /** Tìm vị trí từ đầu tiên chứa xâu s ở đầu. */
+    /** tìm vị trí từ đầu tiên chứa xâu s ở đầu. */
     public int findMinIndex(String s){
         int i = -1;
         int left = 0;

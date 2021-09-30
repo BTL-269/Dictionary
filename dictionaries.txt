@@ -64,3 +64,4 @@ terrible	khủng khiếp, ghê sợ
 terribly	tồi tệ, không chịu nổi
 test 	bài kiểm tra, sự thử nghiệm, xét nghiệm; kiểm tra, xét nghiệm, thử nghiệm
 text	nguyên văn, bản văn, chủ đề
+lion	sư tử
