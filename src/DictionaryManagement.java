@@ -39,7 +39,7 @@ public class DictionaryManagement extends Dictionary {
 
     /** Ver2: Look up explain from the input target. */
     public int dictionaryLookup(String target) {
-        return -1;
+        return 1;
     }
 
     /** Ver3: Remove word. */
