@@ -39,7 +39,6 @@ public class DictionaryManagement extends Dictionary {
 
     /**
      * Ver 2: Look up word from the input.
-     * @param word of string
      * @return the index of word in list
      */
     public int dictionaryLookup(String word) {
