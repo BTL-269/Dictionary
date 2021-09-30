@@ -12,5 +12,55 @@ tiger	hổ
 bear	gấu
 elephant	voi
 giafe	hươu cao cổ
-one một
-apple   quả táo
+one	một
+apple	quả táo
+only	chỉ
+onshore	trên bờ
+onset	sự khởi đầu
+once	một lần
+oneself	bản thân
+ongoing	đang diễn ra
+orange	quả cam, màu cam
+organization	tổ chức, cơ quan
+origin	nguồn gốc
+originally	một cách sáng tạo, mới mẻ, độc đáo
+yawn	há miệng, ngáp
+year	năm
+yellow	vàng, màu vàng
+yet	còn, hãy còn, còn nữa
+young	trẻ
+tail	đuôi
+take	lấy
+take over	tiếp quản
+take care	quan tâm
+tap	mở vòi, đóng vòi
+tape	băng, dải, dây
+target	bia, mục tiêu, đích
+task	nhiệm vụ, nghĩa vụ, bài tập, công tác, công việc
+taste	vị, vị giác
+tax	thuế
+taxi	xe tắc xi
+tea	cây chè, trà, chè
+teach	dạy
+teaching	sự dạy, công việc dạy học
+teacher	giáo viên
+team	đội, nhóm
+tear	xé, làm rắch; chỗ rách, miếng xe; nước mắt
+technical	(thuộc) kỹ thuật, chuyên môn
+technique	kỹ sảo, kỹ thuật, phương pháp kỹ thuật
+technology	kỹ thuật học, công nghệ học
+telephone	máy điện thoại, gọi điện thoại
+television	vô tuyến truyền hình
+tell	nói, nói với
+temperature	nhiệt độ
+temporary	tạm thời, nhất thời
+temporarily	tạm
+tend	trông nom, chăm sóc, giữ gìn, hầu hạ
+tendency	xu hướng, chiều hướng, khuynh hướng
+tension	sự căng, độ căng, tình trạng căng
+tent	lều, rạp
+term	giới hạn, kỳ hạn, khóa, kỳ học
+terrible	khủng khiếp, ghê sợ
+terribly	tồi tệ, không chịu nổi
+test 	bài kiểm tra, sự thử nghiệm, xét nghiệm; kiểm tra, xét nghiệm, thử nghiệm
+text	nguyên văn, bản văn, chủ đề

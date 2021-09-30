@@ -25,7 +25,7 @@ public class DictionaryManagement extends Dictionary {
         try {
             File dictionaries = new File("dictionaries.txt");
             Scanner sc = new Scanner((dictionaries));
-            while (sc.hasNextLine()) {  //
+            while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 String[] word = line.split("\t");
                 addWord(new Word(word[0], word[1]));
