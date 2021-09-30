@@ -1,11 +1,10 @@
+import java.io.*;
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;
 
 public class DictionaryManagement extends Dictionary {
     /**
-     * ver 1: Nhập số lượng từ, nhập từ (tiếng anh, tiếng việt).
-     * Add new word into listWord.
+     * Ver 1: Input number of words, target, explain.
+     * Add new word into listWord./
      */
     public void insertFromCommandLine() {
         Scanner sc = new Scanner(System.in);
@@ -20,26 +19,80 @@ public class DictionaryManagement extends Dictionary {
         sortListWord();
     }
 
-    /** ver 2: nhập từ từ file dictionaries.txt. */
+    /** Ver 2: Read word from file dictionaries.txt. */
     public void insertFromFile() {
         try {
             File dictionaries = new File("dictionaries.txt");
-            Scanner sc = new Scanner((dictionaries));
-            while (sc.hasNextLine()) {  //
-                String line = sc.nextLine();
-                String[] word = line.split("\t");
-                addWord(new Word(word[0], word[1]));
+            Scanner sc = new Scanner(dictionaries);
+            while (sc.hasNextLine()) {
+                String s = sc.nextLine();
+                String[] words = s.split("\t");
+                Word w = new Word(words[0], words[1]);
+                addWord(w);
             }
             sortListWord();
             sc.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Error: " + e);
         }
     }
 
-    // PB2: tra cứu từ
-    public void dictionaryLookup() {
+    /**
+     * Ver 2: Look up word from input.
+     * @param word of string
+     * @return the index of word in list
+     */
+    public int dictionaryLookup(String word) {
+        int i = -1;
+        int left = 0;
+        int right = getListWord().size() - 1;
+        int mid;
+        while (left <= right) {
+            mid = (right + left) / 2;
+            if (word.compareTo(getListWord().get(mid).getWord_target()) == 0) {
+                i = mid;
+                return i;
+            } else if (word.compareTo(getListWord().get(mid).getWord_target()) < 0) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return i;
+    }
 
+    /** Ver3: Remove word. */
+    public void removeWord(String target) {
+        int index = dictionaryLookup(target);
+        if (index != -1) {
+            getListWord().remove(index);
+        } else {
+            System.out.printf("%s '%s' %s", "Not have", target, "in dictionary.");
+        }
+    }
+
+    /** Ver3: Edit word. */
+    public void editWord(String target) {
+        Scanner sc = new Scanner(System.in);
+        String explain = sc.nextLine();
+        Word w = new Word(target, explain);
+        removeWord(target);
+        addWord(w);
+    }
+
+    /** Ver3: Write dictionary to file. */
+    public void dictionaryExportToFile() {
+        try {
+            FileWriter fw = new FileWriter("dictionaries.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            for (Word w : getListWord()) {
+                bw.write(w.getWord_target() + '\t');
+                bw.write(w.getWord_explain() + '\n');
+            }
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+        }
     }
 }
