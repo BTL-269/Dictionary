@@ -1,16 +1,63 @@
-hi	xin chào
-one	một
-two	hai
-three	ba
-four	bốn
-five	năm
-complete	hoàn thành
-house	nhà
-balloon	khinh khí cầu
-lion	sư tử
-tiger	hổ
+apple	quả táo
 bear	gấu
+complete	hoàn thành
 elephant	voi
+five	năm
+four	bốn
 giafe	hươu cao cổ
-one một
-apple   quả táo
+hi	xin chào
+house	nhà
+lion	sư tử
+once	một lần
+one	một
+oneself	bản thân
+ongoing	đang diễn ra
+only	chỉ
+onset	sự khởi đầu
+onshore	trên bờ
+orange	quả cam, màu cam
+organization	tổ chức, cơ quan
+origin	nguồn gốc
+originally	một cách sáng tạo, mới mẻ, độc đáo
+tail	đuôi
+take	lấy
+take care	quan tâm
+take over	tiếp quản
+tap	mở vòi, đóng vòi
+tape	băng, dải, dây
+target	bia, mục tiêu, đích
+task	nhiệm vụ, nghĩa vụ, bài tập, công tác, công việc
+taste	vị, vị giác
+tax	thuế
+tea	cây chè, trà, chè
+teach	dạy
+teacher	giáo viên
+teaching	sự dạy, công việc dạy học
+team	đội, nhóm
+tear	xé, làm rắch; chỗ rách, miếng xe; nước mắt
+technical	(thuộc) kỹ thuật, chuyên môn
+technique	kỹ sảo, kỹ thuật, phương pháp kỹ thuật
+technology	kỹ thuật học, công nghệ học
+telephone	máy điện thoại, gọi điện thoại
+television	vô tuyến truyền hình
+tell	nói, nói với
+temperature	nhiệt độ
+temporarily	tạm
+temporary	tạm thời, nhất thời
+tend	trông nom, chăm sóc, giữ gìn, hầu hạ
+tendency	xu hướng, chiều hướng, khuynh hướng
+tension	sự căng, độ căng, tình trạng căng
+tent	lều, rạp
+term	giới hạn, kỳ hạn, khóa, kỳ học
+terrible	khủng khiếp, ghê sợ
+terribly	tồi tệ, không chịu nổi
+test 	bài kiểm tra, sự thử nghiệm, xét nghiệm; kiểm tra, xét nghiệm, thử nghiệm
+text	nguyên văn, bản văn, chủ đề
+three	ba
+tiger	hổ
+two	hai
+yawn	há miệng, ngáp
+year	năm
+yellow	vàng, màu vàng
+yet	còn, hãy còn, còn nữa
+young	trẻ
