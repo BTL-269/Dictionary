@@ -22,24 +22,42 @@ public class DictionaryManagement extends Dictionary {
     /** Ver 2: Read word from file dictionaries.txt. */
     public void insertFromFile() {
         try {
-            File dictionaries = new File("dictionaries.txt");
-            Scanner sc = new Scanner(dictionaries);
-            while (sc.hasNextLine()) {
-                String s = sc.nextLine();
+            FileReader reader = new FileReader("dictionaries.txt");
+            BufferedReader buffer = new BufferedReader(reader);
+            String s;
+            while ((s = buffer.readLine()) != null) {
                 String[] words = s.split("\t");
                 Word w = new Word(words[0], words[1]);
                 addWord(w);
             }
             sortListWord();
-            sc.close();
+            buffer.close();
+            reader.close();
         } catch (IOException e) {
             System.out.println("Error: " + e);
         }
     }
 
-    /** Ver2: Look up explain from the input target. */
-    public int dictionaryLookup(String target) {
-        return 1;
+    /**
+     * Ver 2: Look up word from the input.
+     * @return the index of word in list
+     */
+    public int dictionaryLookup(String word) {
+        int left = 0, right = getListWord().size() - 1;
+        int mid, result = -1;
+        while (left <= right) {
+            mid = (right + left) / 2;
+            int i = word.compareTo(getListWord().get(mid).getWord_target());
+            if (i == 0) {
+                result = mid;
+                return result;
+            } else if (i < 0) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return result;
     }
 
     /** Ver3: Remove word. */
@@ -64,14 +82,14 @@ public class DictionaryManagement extends Dictionary {
     /** Ver3: Write dictionary to file. */
     public void dictionaryExportToFile() {
         try {
-            FileWriter fw = new FileWriter("dictionaries.txt");
-            BufferedWriter bw = new BufferedWriter(fw);
+            FileWriter writer = new FileWriter("dictionaries.txt");
+            BufferedWriter buffer = new BufferedWriter(writer);
             for (Word w : getListWord()) {
-                bw.write(w.getWord_target() + '\t');
-                bw.write(w.getWord_explain() + '\n');
+                buffer.write(w.getWord_target() + '\t');
+                buffer.write(w.getWord_explain() + '\n');
             }
-            bw.close();
-            fw.close();
+            buffer.close();
+            writer.close();
         } catch (IOException ex) {
             System.out.println("Error: " + ex);
         }

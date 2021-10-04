@@ -61,7 +61,7 @@ public class DictionaryCommandLine extends DictionaryManagement {
         } else {
             while (i < getListWord().size() && getListWord().get(i).getWord_target().startsWith(s)) {
                 System.out.printf("%-20s%s\n", getListWord().get(i).getWord_target()
-                        , getListWord().get(i).getWord_explain());
+                                            , getListWord().get(i).getWord_explain());
                 i++;
             }
         }
