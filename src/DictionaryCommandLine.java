@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandLine extends DictionaryManagement {
@@ -51,19 +52,19 @@ public class DictionaryCommandLine extends DictionaryManagement {
     }
 
     /** Ver3: Print the list of word_target start with s. */
-    public void dictionarySearcher() {
-        String s;
+    public ArrayList<String> dictionarySearcher() {
         Scanner sc = new Scanner(System.in);
-        s = sc.next();
+        String s = sc.next();
         int i = findMinIndex(s);
+        ArrayList<String> list = new ArrayList<>();
         if (i == -1) {
             System.out.println("Not found.");
         } else {
             while (i < getListWord().size() && getListWord().get(i).getWord_target().startsWith(s)) {
-                System.out.printf("%-20s%s\n", getListWord().get(i).getWord_target()
-                                            , getListWord().get(i).getWord_explain());
+                list.add(getListWord().get(i).getWord_target());
                 i++;
             }
         }
+        return list;
     }
 }
