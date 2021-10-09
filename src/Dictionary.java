@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Dictionary{
-    private ArrayList<Word> listWord = new ArrayList<>(); // Word Array
+    // Word Array
+    private ArrayList<Word> listWord = new ArrayList<>();
 
     /** Getter listWord. */
     public ArrayList<Word> getListWord() {
@@ -27,5 +28,4 @@ public class Dictionary{
             listWord.add(word);
         }
     }
-
 }
