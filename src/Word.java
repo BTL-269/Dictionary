@@ -8,6 +8,14 @@ public class Word implements Comparable<Word> {
     /** Constructor 2. */
     public Word(String target, String explain) {
         this.word_target = target;
+        explain = explain.replaceFirst("@", "");
+        explain = explain.replaceAll("(Chuyên ngành).+(n-)", "");
+        explain = explain.replaceAll("n@", "\n");
+        explain = explain.replaceAll("n\\*", "\n");
+        explain = explain.replaceAll("n-", "\n\t- ");
+        explain = explain.replaceAll("n=","\n\t\t+ ");
+        explain = explain.replace('\\',' ');
+        explain = explain.replace(target, "");
         this.word_explain = explain;
     }
 
