@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class Dictionary{
     // Word Array
-    private ArrayList<Word> listWord = new ArrayList<>();
+    protected ArrayList<Word> listWord = new ArrayList<>();
 
     /** Getter listWord. */
     public ArrayList<Word> getListWord() {

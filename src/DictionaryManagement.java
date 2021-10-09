@@ -24,11 +24,18 @@ public class DictionaryManagement extends Dictionary {
         try {
             FileReader reader = new FileReader("dictionaries.txt");
             BufferedReader buffer = new BufferedReader(reader);
-            String s;
+            String s = buffer.readLine();
+            String[] word1 = s.split("\t");
             while ((s = buffer.readLine()) != null) {
-                String[] words = s.split("\t");
-                Word w = new Word(words[0], words[1]);
-                addWord(w);
+                String[] word2 = s.split("\t");
+                while (word2.length != 2) {
+                    word1[1] += s;
+                    s = buffer.readLine();
+                    word2 = s.split("\t");
+                }
+                Word w = new Word(word1[0], word1[1]);
+                listWord.add(w);
+                word1 = word2;
             }
             sortListWord();
             buffer.close();
