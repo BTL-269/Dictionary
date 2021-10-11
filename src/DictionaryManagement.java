@@ -22,16 +22,24 @@ public class DictionaryManagement extends Dictionary {
     /** Ver 2: Read word from file dictionaries.txt. */
     public void insertFromFile() {
         try {
-            File dictionaries = new File("dictionaries.txt");
-            Scanner sc = new Scanner(dictionaries);
-            while (sc.hasNextLine()) {
-                String s = sc.nextLine();
-                String[] words = s.split("\t");
-                Word w = new Word(words[0], words[1]);
-                addWord(w);
+            FileReader reader = new FileReader("dictionaries.txt");
+            BufferedReader buffer = new BufferedReader(reader);
+            String s = buffer.readLine();
+            String[] word1 = s.split("\t");
+            while ((s = buffer.readLine()) != null) {
+                String[] word2 = s.split("\t");
+                while (word2.length != 2) {
+                    word1[1] += s;
+                    s = buffer.readLine();
+                    word2 = s.split("\t");
+                }
+                Word w = new Word(word1[0], word1[1]);
+                listWord.add(w);
+                word1 = word2;
             }
             sortListWord();
-            sc.close();
+            buffer.close();
+            reader.close();
         } catch (IOException e) {
             System.out.println("Error: " + e);
         }
@@ -42,22 +50,21 @@ public class DictionaryManagement extends Dictionary {
      * @return the index of word in list
      */
     public int dictionaryLookup(String word) {
-        int i = -1;
-        int left = 0;
-        int right = getListWord().size() - 1;
-        int mid;
+        int left = 0, right = getListWord().size() - 1;
+        int mid, result = -1;
         while (left <= right) {
             mid = (right + left) / 2;
-            if (word.compareTo(getListWord().get(mid).getWord_target()) == 0) {
-                i = mid;
-                return i;
-            } else if (word.compareTo(getListWord().get(mid).getWord_target()) < 0) {
+            int i = word.compareTo(getListWord().get(mid).getWord_target());
+            if (i == 0) {
+                result = mid;
+                return result;
+            } else if (i < 0) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
             }
         }
-        return i;
+        return result;
     }
 
     /** Ver3: Remove word. */
@@ -82,14 +89,14 @@ public class DictionaryManagement extends Dictionary {
     /** Ver3: Write dictionary to file. */
     public void dictionaryExportToFile() {
         try {
-            FileWriter fw = new FileWriter("dictionaries.txt");
-            BufferedWriter bw = new BufferedWriter(fw);
+            FileWriter writer = new FileWriter("dictionaries.txt");
+            BufferedWriter buffer = new BufferedWriter(writer);
             for (Word w : getListWord()) {
-                bw.write(w.getWord_target() + '\t');
-                bw.write(w.getWord_explain() + '\n');
+                buffer.write(w.getWord_target() + '\t');
+                buffer.write(w.getWord_explain() + '\n');
             }
-            bw.close();
-            fw.close();
+            buffer.close();
+            writer.close();
         } catch (IOException ex) {
             System.out.println("Error: " + ex);
         }
