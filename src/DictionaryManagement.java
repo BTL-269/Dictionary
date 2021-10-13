@@ -1,11 +1,5 @@
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class DictionaryManagement extends Dictionary {
     /**
@@ -25,10 +19,10 @@ public class DictionaryManagement extends Dictionary {
         sortListWord();
     }
 
-    /** Ver 2: Read word from file dictionaries.txt. */
-    public void insertFromFile(String fileName) {
+    /** Ver 2: Read word from file. */
+    public void insertFromFile(String filePath) {
         try {
-            FileReader reader = new FileReader(fileName);
+            FileReader reader = new FileReader(filePath);
             BufferedReader buffer = new BufferedReader(reader);
             String s = buffer.readLine();
             String[] word1 = s.split("\t");
@@ -43,6 +37,7 @@ public class DictionaryManagement extends Dictionary {
                 listWord.add(w);
                 word1 = word2;
             }
+            listWord.add(new Word(word1[0], word1[1]));
             sortListWord();
             buffer.close();
             reader.close();
@@ -78,22 +73,21 @@ public class DictionaryManagement extends Dictionary {
         int index = dictionaryLookup(target);
         if (index != -1) {
             getListWord().remove(index);
+        } else {
+            System.out.printf("%s '%s' %s", "Not have", target, "in dictionary.");
         }
     }
 
     /** Ver3: Edit word. */
-    public void editWord(String target) {
-        Scanner sc = new Scanner(System.in);
-        String explain = sc.nextLine();
-        Word w = new Word(target, explain);
-        removeWord(target);
-        addWord(w);
+    public void editWord(String target, String explain,int index) {
+        index = dictionaryLookup(target);
+        getListWord().get(index).setWord_explain(explain);
     }
 
     /** Ver3: Write dictionary to file. */
-    public void dictionaryExportToFile(String fileName) {
+    public void dictionaryExportToFile(String filePath) {
         try {
-            FileWriter writer = new FileWriter(fileName);
+            FileWriter writer = new FileWriter(filePath);
             BufferedWriter buffer = new BufferedWriter(writer);
             for (Word w : getListWord()) {
                 buffer.write(w.getWord_target() + '\t');

@@ -1,3 +1,4 @@
+import com.sun.javafx.iio.ImageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
@@ -14,7 +15,6 @@ public class ControllerDicInterface {
         AnchorPane newPane = loader.getPane("Search.fxml");
         borderPane.setCenter(newPane);
     }
-
 
     @FXML
     void clickFavoriteWords(ActionEvent event) {

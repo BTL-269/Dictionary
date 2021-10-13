@@ -40,7 +40,7 @@
                         <Font name="Cambria" size="20.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="5.0" />
+                        <Insets right="8.0" />
                      </HBox.margin>
                      <styleClass>
                         <String fx:value="search-button" />
