@@ -139,7 +139,7 @@
                               <Insets left="40.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Button mnemonicParsing="false" onAction="#clickRecentWords" prefHeight="70.0" prefWidth="190.0" styleClass="transparent" stylesheets="@Style.css" text="About" textFill="#f8a02d">
+                        <Button mnemonicParsing="false" onAction="#clickAbout" prefHeight="70.0" prefWidth="190.0" styleClass="transparent" stylesheets="@Style.css" text="About" textFill="#f8a02d">
                            <font>
                               <Font name="Cambria Bold" size="20.0" />
                            </font>
