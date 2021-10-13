@@ -15,7 +15,6 @@ public class ControllerDicInterface {
         borderPane.setCenter(newPane);
     }
 
-
     @FXML
     void clickFavoriteWords(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
