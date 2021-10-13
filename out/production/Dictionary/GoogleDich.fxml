@@ -54,7 +54,7 @@
                 </HBox>
             </children>
         </VBox>
-        <TextArea fx:id="outputText" layoutX="113.0" layoutY="230.0" prefHeight="380.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="220.0">
+        <TextArea fx:id="outputText" layoutX="113.0" layoutY="230.0" prefHeight="380.0" prefWidth="590.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="220.0">
             <font>
                 <Font name="Cambria" size="20.0" />
             </font>

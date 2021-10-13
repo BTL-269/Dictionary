@@ -1,0 +1,15 @@
+cat	mèo
+chicken	gà
+dog	chó
+duck	vịt
+fig	sung
+fish	cá
+grape	nho
+happy	hạnh phúc
+how	như thế nào
+let	cho phép
+meet	gặp
+no	không
+read	đọc
+teacher	giáo viên
+when	khi nào

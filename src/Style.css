@@ -15,6 +15,7 @@
 .selected:hover {
     -fx-background-color: #666786;
 }
-.right-pane {
-    -fx-background-color: #c46fe1;
+.border {
+    -fx-border-width: 3;
+    -fx-border-color: #0b3d7e;
 }

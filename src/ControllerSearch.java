@@ -30,7 +30,7 @@ public class ControllerSearch  {
 
     @FXML
     void clickSearchButton(ActionEvent event) {
-        listDic.insertFromFile();
+        listDic.insertFromFile("dictionaries.txt");
         String s = inputWord.getText();
         Word word = listDic.getListWord().get(listDic.dictionaryLookup(s));
         outputText.setText(word.getWord_explain());

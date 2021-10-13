@@ -1,5 +1,11 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class DictionaryManagement extends Dictionary {
     /**
@@ -20,9 +26,9 @@ public class DictionaryManagement extends Dictionary {
     }
 
     /** Ver 2: Read word from file dictionaries.txt. */
-    public void insertFromFile() {
+    public void insertFromFile(String fileName) {
         try {
-            FileReader reader = new FileReader("dictionaries.txt");
+            FileReader reader = new FileReader(fileName);
             BufferedReader buffer = new BufferedReader(reader);
             String s = buffer.readLine();
             String[] word1 = s.split("\t");
@@ -72,8 +78,6 @@ public class DictionaryManagement extends Dictionary {
         int index = dictionaryLookup(target);
         if (index != -1) {
             getListWord().remove(index);
-        } else {
-            System.out.printf("%s '%s' %s", "Not have", target, "in dictionary.");
         }
     }
 
@@ -87,9 +91,9 @@ public class DictionaryManagement extends Dictionary {
     }
 
     /** Ver3: Write dictionary to file. */
-    public void dictionaryExportToFile() {
+    public void dictionaryExportToFile(String fileName) {
         try {
-            FileWriter writer = new FileWriter("dictionaries.txt");
+            FileWriter writer = new FileWriter(fileName);
             BufferedWriter buffer = new BufferedWriter(writer);
             for (Word w : getListWord()) {
                 buffer.write(w.getWord_target() + '\t');

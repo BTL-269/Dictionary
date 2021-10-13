@@ -1,7 +1,10 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandLine extends DictionaryManagement {
+    /** Constructor with parameter */
+    public DictionaryCommandLine(String fileName) { insertFromFile(fileName);}
 
     /** Ver1: Print all the words with the given format. */
     public void showAllWords() {
@@ -21,7 +24,7 @@ public class DictionaryCommandLine extends DictionaryManagement {
 
     /** Ver2: Function dictionaryAdvanced() called: insertFromFile(), showAllWords() and dictionaryLookup(). */
     public void dictionaryAdvanced() {
-        insertFromFile();
+        insertFromFile("dictionaries.txt");
         showAllWords();
         //dictionaryLookup();
     }

@@ -12,7 +12,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerDicInterface">
    <children>
       <BorderPane prefHeight="600.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="0.0">
-         <top>
+         <bottom>
             <VBox prefHeight="600.0" prefWidth="300.0" styleClass="pane" stylesheets="@Style.css" BorderPane.alignment="CENTER">
                <children>
                   <Label alignment="CENTER" prefHeight="50.0" prefWidth="300.0" text="English Dictionary" textFill="#f8a02d">
@@ -23,7 +23,6 @@
                         <Insets top="40.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox prefHeight="40.0" prefWidth="300.0" />
                   <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="300.0" styleClass="selected" stylesheets="@Style.css">
                      <children>
                         <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
@@ -31,7 +30,7 @@
                               <Insets left="40.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@images/search.png" />
+                              <Image url="@images/search1.png" />
                            </image>
                         </ImageView>
                         <Button mnemonicParsing="false" onAction="#clickSearch" prefHeight="70.0" prefWidth="185.0" styleClass="transparent" stylesheets="@Style.css" text="Search" textFill="#f8a02d">
@@ -50,14 +49,14 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="300.0" styleClass="selected" stylesheets="@Style.css">
                      <children>
                         <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/star.png" />
+                           </image>
                            <HBox.margin>
                               <Insets left="40.0" />
                            </HBox.margin>
-                           <image>
-                              <Image url="@images/book.png" />
-                           </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" onAction="#clickFavoriteWords" prefHeight="70.0" prefWidth="200.0" styleClass="transparent" stylesheets="@Style.css" text="Favorite Words" textFill="#f8a02d">
+                        <Button mnemonicParsing="false" onAction="#clickFavoriteWords" prefHeight="70.0" prefWidth="190.0" styleClass="transparent" stylesheets="@Style.css" text="Favorite Words" textFill="#f8a02d">
                            <font>
                               <Font name="Cambria Bold" size="20.0" />
                            </font>
@@ -66,32 +65,26 @@
                            </HBox.margin>
                         </Button>
                      </children>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="300.0" styleClass="selected" stylesheets="@Style.css">
                      <children>
-                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="45.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/dich2.png" />
+                           </image>
                            <HBox.margin>
                               <Insets left="40.0" />
                            </HBox.margin>
-                           <image>
-                              <Image url="@images/dich.png" />
-                           </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" onAction="#clickGoogleDich" prefHeight="70.0" prefWidth="175.0" styleClass="transparent" stylesheets="@Style.css" text="Google Dich" textFill="#f8a02d">
+                        <Button mnemonicParsing="false" onAction="#clickGoogleDich" prefHeight="70.0" prefWidth="172.0" styleClass="transparent" stylesheets="@Style.css" text="Google Dịch" textFill="#f8a02d">
                            <font>
                               <Font name="Cambria Bold" size="20.0" />
                            </font>
                            <HBox.margin>
-                              <Insets right="25.0" />
+                              <Insets right="15.0" />
                            </HBox.margin>
                         </Button>
                      </children>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="300.0" styleClass="selected" stylesheets="@Style.css">
                      <children>
@@ -100,7 +93,7 @@
                               <Insets left="40.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@images/clock.png" />
+                              <Image url="@images/clock1.png" />
                            </image>
                         </ImageView>
                         <Button mnemonicParsing="false" onAction="#clickRecentWords" prefHeight="70.0" prefWidth="190.0" styleClass="transparent" stylesheets="@Style.css" text="Recent Words" textFill="#f8a02d">
@@ -118,31 +111,48 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="300.0" styleClass="selected" stylesheets="@Style.css">
                      <children>
-                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <HBox.margin>
-                              <Insets left="50.0" />
-                           </HBox.margin>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/add.png" />
+                              <Image url="@images/add2.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
                         </ImageView>
-                        <Button mnemonicParsing="false" onAction="#clickAdd" prefHeight="70.0" prefWidth="190.0" styleClass="transparent" stylesheets="@Style.css" text="Add" textFill="#f8a02d">
+                        <Button mnemonicParsing="false" onAction="#clickAdd" prefHeight="70.0" prefWidth="190.0" styleClass="transparent" stylesheets="@Style.css" text="Add Word" textFill="#f8a02d">
                            <font>
                               <Font name="Cambria Bold" size="20.0" />
                            </font>
                            <HBox.margin>
-                              <Insets right="20.0" />
+                              <Insets right="15.0" />
                            </HBox.margin>
                         </Button>
                      </children>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="300.0" styleClass="selected" stylesheets="@Style.css">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/about1.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#clickRecentWords" prefHeight="70.0" prefWidth="190.0" styleClass="transparent" stylesheets="@Style.css" text="About" textFill="#f8a02d">
+                           <font>
+                              <Font name="Cambria Bold" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
                   </HBox>
                </children>
             </VBox>
-         </top>
+         </bottom>
       </BorderPane>
-      <BorderPane fx:id="borderPane" layoutX="260.0" layoutY="186.0" prefHeight="600.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <BorderPane fx:id="borderPane" layoutX="260.0" layoutY="186.0" prefHeight="600.0" prefWidth="590.0" styleClass="backgr" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

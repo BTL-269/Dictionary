@@ -18,7 +18,11 @@ public class Word implements Comparable<Word> {
         explain = explain.replace(target, "");
         this.word_explain = explain;
     }
-
+    /** Get String of word*/
+    @Override
+    public String toString() {
+        return (word_target + "          " + word_explain);
+    }
     /** Getter & Setter of word_target. */
     public void setWord_target(String target) {
         this.word_target = target;
