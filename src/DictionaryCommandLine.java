@@ -1,7 +1,14 @@
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandLine extends DictionaryManagement {
+    public DictionaryCommandLine(String filePath) {
+        File file = new File(filePath);
+        if (file.length() != 1) {
+            insertFromFile(filePath);
+        }
+    }
 
     /** Ver1: Print all the words with the given format. */
     public void showAllWords() {
@@ -21,7 +28,7 @@ public class DictionaryCommandLine extends DictionaryManagement {
 
     /** Ver2: Function dictionaryAdvanced() called: insertFromFile(), showAllWords() and dictionaryLookup(). */
     public void dictionaryAdvanced() {
-        insertFromFile();
+        //insertFromFile();
         showAllWords();
         //dictionaryLookup();
     }

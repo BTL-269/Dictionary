@@ -19,10 +19,10 @@ public class DictionaryManagement extends Dictionary {
         sortListWord();
     }
 
-    /** Ver 2: Read word from file dictionaries.txt. */
-    public void insertFromFile() {
+    /** Ver 2: Read word from file. */
+    public void insertFromFile(String filePath) {
         try {
-            FileReader reader = new FileReader("dictionaries.txt");
+            FileReader reader = new FileReader(filePath);
             BufferedReader buffer = new BufferedReader(reader);
             String s = buffer.readLine();
             String[] word1 = s.split("\t");
@@ -37,6 +37,7 @@ public class DictionaryManagement extends Dictionary {
                 listWord.add(w);
                 word1 = word2;
             }
+            listWord.add(new Word(word1[0], word1[1]));
             sortListWord();
             buffer.close();
             reader.close();
@@ -78,18 +79,15 @@ public class DictionaryManagement extends Dictionary {
     }
 
     /** Ver3: Edit word. */
-    public void editWord(String target) {
-        Scanner sc = new Scanner(System.in);
-        String explain = sc.nextLine();
-        Word w = new Word(target, explain);
-        removeWord(target);
-        addWord(w);
+    public void editWord(String target, String explain,int index) {
+        index = dictionaryLookup(target);
+        getListWord().get(index).setWord_explain(explain);
     }
 
     /** Ver3: Write dictionary to file. */
-    public void dictionaryExportToFile() {
+    public void dictionaryExportToFile(String filePath) {
         try {
-            FileWriter writer = new FileWriter("dictionaries.txt");
+            FileWriter writer = new FileWriter(filePath);
             BufferedWriter buffer = new BufferedWriter(writer);
             for (Word w : getListWord()) {
                 buffer.write(w.getWord_target() + '\t');
