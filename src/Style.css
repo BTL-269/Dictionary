@@ -23,3 +23,6 @@
 .backgr {
     -fx-background-image: url("images/welcome1.png");
 }
+.backgroundAbout {
+    -fx-background-image: url("images/about2.png");
+}
