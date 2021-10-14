@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class DictionaryCommandLine extends DictionaryManagement {
     public DictionaryCommandLine(String filePath) {
         File file = new File(filePath);
-        if (file.length() != 1) {
+        if (file.length() != 0) {
             insertFromFile(filePath);
         }
     }

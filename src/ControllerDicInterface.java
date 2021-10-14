@@ -43,4 +43,11 @@ public class ControllerDicInterface {
         AnchorPane newPane = loader.getPane("Add.fxml");
         borderPane.setCenter(newPane);
     }
+
+    @FXML
+    void clickAbout(ActionEvent event) {
+        FxmlLoader loader = new FxmlLoader();
+        AnchorPane newPane = loader.getPane("About.fxml");
+        borderPane.setCenter(newPane);
+    }
 }
