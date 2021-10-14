@@ -19,14 +19,14 @@ public class ControllerDicInterface {
     @FXML
     void clickFavoriteWords(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
-        AnchorPane newPane = loader.getPane("MyWord.fxml");
+        AnchorPane newPane = loader.getPane("Favourite.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickGoogleDich(ActionEvent event) {
+    void clickGoogleTranslate(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
-        AnchorPane newPane = loader.getPane("GoogleDich.fxml");
+        AnchorPane newPane = loader.getPane("GoogleTranslate.fxml");
         borderPane.setCenter(newPane);
     }
 
@@ -43,4 +43,7 @@ public class ControllerDicInterface {
         AnchorPane newPane = loader.getPane("Add.fxml");
         borderPane.setCenter(newPane);
     }
+
+    @FXML
+    void clickAbout(ActionEvent event) {}
 }

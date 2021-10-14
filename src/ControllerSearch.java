@@ -1,26 +1,14 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
-import java.util.ArrayList;
-import java.util.EventListener;
+import java.io.FileWriter;
 import java.util.Optional;
 
 public class ControllerSearch {
-
-    @FXML
-    private ImageView edit;
-
-    @FXML
-    private ImageView like;
-
-    @FXML
-    private ImageView speaker;
 
     @FXML
     private TextField inputWord;
@@ -28,21 +16,33 @@ public class ControllerSearch {
     @FXML
     private TextArea outputText;
 
-    @FXML
-    private ImageView delete;
-
-    private DictionaryCommandLine listDic = new DictionaryCommandLine("dictionaries.txt");
-    private DictionaryCommandLine listMyWord = new DictionaryCommandLine("listMyWord.txt");
+    private final DictionaryCommandLine listDic = new DictionaryCommandLine("dictionaries.txt");
+    private final DictionaryCommandLine listFavourite = new DictionaryCommandLine("listFavourite.txt");
+    private static final int NUM_OF_HISTORY = 10;
 
     @FXML
     void clickSearchButton(ActionEvent event) {
         String target = inputWord.getText();
         int index = listDic.dictionaryLookup(target);
         if (index == -1) {
-            outputText.setText("Not found");
+            outputText.setText("Not found.");
         } else {
+            // Print word_explain at outputText
             Word word = listDic.getListWord().get(listDic.dictionaryLookup(target));
             outputText.setText(word.printWordExplain());
+
+            DictionaryCommandLine listHistory = new DictionaryCommandLine();
+            // Lay tu da tra cho vao listHistory.
+            index = listHistory.dictionaryLookup(target);
+            if (index == -1) {
+                if (listHistory.getListWord().size() == NUM_OF_HISTORY) {
+                    listHistory.getListWord().remove(NUM_OF_HISTORY - 1);
+                }
+            } else {
+                listHistory.getListWord().remove(index);
+            }
+            listHistory.getListWord().add(0, word);
+            listHistory.dictionaryExportToFile("listHistory.txt");
         }
     }
 
@@ -123,16 +123,16 @@ public class ControllerSearch {
             if (word_explain.isEmpty() || word_target.isEmpty()) {
                 notification("You have not entered the target or the explain");
             } else {
-                int index = listMyWord.dictionaryLookup(word_target);
+                int index = listFavourite.dictionaryLookup(word_target);
                 if (index == -1) {
-                    listMyWord.addWord(new Word(word_target, word_explain));
-                    listMyWord.dictionaryExportToFile("listMyWord.txt");
+                    listFavourite.addWord(new Word(word_target, word_explain));
+                    listFavourite.dictionaryExportToFile("listFavourite.txt");
                 } else {
-                    if (index != -1 && listMyWord.getListWord().get(index).getWord_explain().compareTo(word_explain) == 0) {
+                    if (index != -1 && listFavourite.getListWord().get(index).getWord_explain().compareTo(word_explain) == 0) {
                         notification("This word is already in the My Favorite");
                     } else {
-                        listMyWord.addWord(new Word(word_target, word_explain));
-                        listMyWord.dictionaryExportToFile("listMyWord.txt");
+                        listFavourite.addWord(new Word(word_target, word_explain));
+                        listFavourite.dictionaryExportToFile("listFavourite.txt");
                     }
                 }
             }

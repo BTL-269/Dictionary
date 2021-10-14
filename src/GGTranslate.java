@@ -2,10 +2,17 @@ import com.darkprograms.speech.translator.GoogleTranslate;
 
 public class GGTranslate {
 
-    public String transText(String langOut, String target) {
+    public static String transText(String langOut, String text) {
         String ans = "";
         try {
-            ans = GoogleTranslate.translate(langOut, target);
+            String[] listRow = text.split("\n");
+            for (String s : listRow) {
+                String[] list = s.split("\\.");
+                for (String t : list) {
+                    ans += GoogleTranslate.translate(langOut, t);
+                }
+                ans += "\n";
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,6 +1,5 @@
 .pane {
     -fx-background-color: #0b3d7e;
-    -fx-background-color: #2b579a;
 }
 .transparent {
     -fx-background-color: rgba(0, 0, 0, 0);
@@ -20,6 +19,12 @@
 .right-pane {
     -fx-background-color: #c46fe1;
 }
+.text {
+    -fx-font-size: 20;
+    -fx-background-color: #0b3d7e;
+}
 .backgr {
     -fx-background-image: url("images/welcome1.png");
 }
+
+

@@ -3,10 +3,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandLine extends DictionaryManagement {
+
+    public DictionaryCommandLine() {
+        File file = new File("listHistory.txt");
+        if (file.length() != 0) {
+            insertFromFile("listHistory.txt");
+        }
+    }
+
     public DictionaryCommandLine(String filePath) {
         File file = new File(filePath);
-        if (file.length() != 1) {
+        if (file.length() != 0) {
             insertFromFile(filePath);
+            sortListWord();
         }
     }
 
