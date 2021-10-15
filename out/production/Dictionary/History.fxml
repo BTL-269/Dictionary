@@ -23,7 +23,7 @@
                         <Insets left="25.0" right="25.0" top="35.0" />
                     </VBox.margin>
                     <children>
-                        <TextField fx:id="WordIn" prefHeight="55.0" prefWidth="440.0" promptText="Type here to search" styleClass="transparent" stylesheets="@Style.css">
+                        <TextField fx:id="inputWord" prefHeight="55.0" prefWidth="440.0" promptText="Type here to search" styleClass="transparent" stylesheets="@Style.css">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
@@ -31,7 +31,7 @@
                                 <Font name="Cambria" size="20.0" />
                             </font>
                         </TextField>
-                        <Button mnemonicParsing="false" onAction="#clickSearchBut" prefHeight="40.0" prefWidth="90.0" stylesheets="@Style.css" text="Search" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#clickSearchButton" prefHeight="40.0" prefWidth="90.0" stylesheets="@Style.css" text="Search" textFill="WHITE">
                             <font>
                                 <Font name="Cambria" size="20.0" />
                             </font>

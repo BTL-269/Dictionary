@@ -4,8 +4,6 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-
-import java.io.FileWriter;
 import java.util.Optional;
 
 public class ControllerSearch {
@@ -18,7 +16,7 @@ public class ControllerSearch {
 
     private final DictionaryCommandLine listDic = new DictionaryCommandLine("dictionaries.txt");
     private final DictionaryCommandLine listFavourite = new DictionaryCommandLine("listFavourite.txt");
-    private static final int NUM_OF_HISTORY = 10;
+    private static final int NUM_OF_HISTORY = 30;
 
     @FXML
     void clickSearchButton(ActionEvent event) {
@@ -31,9 +29,17 @@ public class ControllerSearch {
             Word word = listDic.getListWord().get(listDic.dictionaryLookup(target));
             outputText.setText(word.printWordExplain());
 
+            // Add searched word into listHistory.
             DictionaryCommandLine listHistory = new DictionaryCommandLine();
-            // Lay tu da tra cho vao listHistory.
-            index = listHistory.dictionaryLookup(target);
+
+            // Find index of target in listHistory.
+            index = -1;
+            for (Word w : listHistory.getListWord()) {
+                if (w.getWord_target().equals(target)) {
+                    index = listHistory.getListWord().indexOf(w);
+                    break;
+                }
+            }
             if (index == -1) {
                 if (listHistory.getListWord().size() == NUM_OF_HISTORY) {
                     listHistory.getListWord().remove(NUM_OF_HISTORY - 1);

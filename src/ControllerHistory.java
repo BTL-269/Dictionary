@@ -1,36 +1,55 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.layout.GridPane;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ControllerHistory implements Initializable {
 
     @FXML
-    private TextField WordIn;
+    private TextField inputWord;
 
     @FXML
     private TreeView<String> treeView;
 
+    private final DictionaryCommandLine listHistory = new DictionaryCommandLine();
+
     @FXML
-    void clickSearchBut(ActionEvent event) {
+    void clickSearchButton(ActionEvent event) {
+        String target = inputWord.getText();
+        TreeItem<String> root = new TreeItem<>("HistoryWords");
 
+        // Find index of target in listHistory.
+        int index = -1;
+        for (Word w : listHistory.getListWord()) {
+            if (w.getWord_target().equals(target)) {
+                index = listHistory.getListWord().indexOf(w);
+                break;
+            }
+        }
+
+        // Show word.
+        if (index == -1) {
+            TreeItem<String> branch1 = new TreeItem<>("Not found.");
+            root.getChildren().add(branch1);
+        } else {
+            Word word = listHistory.getListWord().get(index);
+            TreeItem<String> branch2 = new TreeItem<>(word.getWord_target());
+            TreeItem<String> branchItem = new TreeItem<>(word.printWordExplain());
+            branch2.getChildren().add(branchItem);
+            root.getChildren().add(branch2);
+        }
+
+        treeView.setRoot(root);
+        treeView.setShowRoot(false);
     }
-
-    private DictionaryCommandLine listHistory = new DictionaryCommandLine();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // Show word of listHistory
         TreeItem<String> root = new TreeItem<>("HistoryWords");
 
         for (Word w : listHistory.getListWord()) {

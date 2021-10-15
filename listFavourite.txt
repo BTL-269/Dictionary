@@ -1,1 +1,2 @@
 hi	xin chào
+hello	chaof
