@@ -1,3 +1,4 @@
+import com.sun.javafx.iio.ImageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
@@ -18,14 +19,14 @@ public class ControllerDicInterface {
     @FXML
     void clickFavoriteWords(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
-        AnchorPane newPane = loader.getPane("Favourite.fxml");
+        AnchorPane newPane = loader.getPane("MyWord.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickGoogleTranslate(ActionEvent event) {
+    void clickGoogleDich(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
-        AnchorPane newPane = loader.getPane("GoogleTranslate.fxml");
+        AnchorPane newPane = loader.getPane("GoogleDich.fxml");
         borderPane.setCenter(newPane);
     }
 
@@ -44,5 +45,9 @@ public class ControllerDicInterface {
     }
 
     @FXML
-    void clickAbout(ActionEvent event) {}
+    void clickAbout(ActionEvent event) {
+        FxmlLoader loader = new FxmlLoader();
+        AnchorPane newPane = loader.getPane("About.fxml");
+        borderPane.setCenter(newPane);
+    }
 }
