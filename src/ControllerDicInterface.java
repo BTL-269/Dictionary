@@ -1,4 +1,3 @@
-import com.sun.javafx.iio.ImageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;

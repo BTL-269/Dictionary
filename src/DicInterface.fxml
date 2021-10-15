@@ -150,6 +150,6 @@
             </VBox>
          </bottom>
       </BorderPane>
-      <BorderPane fx:id="borderPane" layoutX="260.0" layoutY="186.0" prefHeight="600.0" prefWidth="590.0" styleClass="backgr" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <BorderPane fx:id="borderPane" layoutX="260.0" layoutY="186.0" prefHeight="600.0" prefWidth="590.0" styleClass="bgr" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

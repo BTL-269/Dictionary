@@ -22,7 +22,7 @@
 .box {
     -fx-font-size: 20;
 }
-.backgr {
+.bgr {
     -fx-background-image: url("images/welcome1.png");
 }
 .backgroundAbout {
