@@ -17,21 +17,21 @@ public class ControllerDicInterface {
     }
 
     @FXML
-    void clickFavoriteWords(ActionEvent event) {
+    void clickFavorite(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
-        AnchorPane newPane = loader.getPane("MyWord.fxml");
+        AnchorPane newPane = loader.getPane("Favourite.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickGoogleDich(ActionEvent event) {
+    void clickGoogleTranslate(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
-        AnchorPane newPane = loader.getPane("GoogleDich.fxml");
+        AnchorPane newPane = loader.getPane("GoogleTranslate.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickRecentWords(ActionEvent event) {
+    void clickRecent(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
         AnchorPane newPane = loader.getPane("History.fxml");
         borderPane.setCenter(newPane);

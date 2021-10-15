@@ -8,28 +8,28 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="590.0" styleClass="pane" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerGoogleTranslate">
     <children>
-        <Label layoutX="200.0" layoutY="7.0" prefHeight="50.0" prefWidth="184.0" text="Google Translate" textFill="#f8a02d" AnchorPane.bottomAnchor="543.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="206.0" AnchorPane.topAnchor="7.0">
+        <Label layoutX="180.0" layoutY="14.0" prefHeight="58.0" prefWidth="231.0" text="Google Translate" textFill="#f8a02d" AnchorPane.bottomAnchor="536.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="14.0">
             <font>
-                <Font name="Cambria" size="24.0" />
+                <Font name="Cambria Bold" size="24.0" />
             </font>
         </Label>
-      <ComboBox fx:id="box1" layoutX="22.0" layoutY="67.0" prefHeight="34.0" prefWidth="184.0" styleClass="box" stylesheets="@Style.css" AnchorPane.bottomAnchor="497.0" AnchorPane.topAnchor="67.0" />
-      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="224.0" layoutY="69.0" onMouseClicked="#clickSpeaker2" pickOnBounds="true" preserveRatio="true">
+      <ComboBox fx:id="box1" layoutX="22.0" layoutY="85.0" prefHeight="34.0" prefWidth="184.0" styleClass="box" stylesheets="@Style.css" AnchorPane.bottomAnchor="479.0" AnchorPane.topAnchor="85.0" />
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="224.0" layoutY="86.0" onMouseClicked="#clickSpeaker2" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/speaker1.png" />
          </image>
       </ImageView>
-        <TextArea fx:id="input" layoutX="21.0" layoutY="122.0" prefHeight="117.0" prefWidth="541.0" promptText="Type here" styleClass="text" stylesheets="@Style.css" wrapText="true" AnchorPane.bottomAnchor="361.0" AnchorPane.topAnchor="122.0">
+        <TextArea fx:id="input" layoutX="21.0" layoutY="140.0" prefHeight="117.0" prefWidth="541.0" promptText="Type here" styleClass="text" stylesheets="@Style.css" wrapText="true" AnchorPane.bottomAnchor="343.0" AnchorPane.topAnchor="140.0">
             <font>
                 <Font name="Cambria" size="20.0" />
             </font>
         </TextArea>
-        <TextArea fx:id="output" editable="false" layoutX="21.0" layoutY="336.0" prefHeight="168.0" prefWidth="541.0" styleClass="text" stylesheets="@Style.css" wrapText="true">
+        <TextArea fx:id="output" editable="false" layoutX="21.0" layoutY="354.0" prefHeight="168.0" prefWidth="541.0" styleClass="text" stylesheets="@Style.css" wrapText="true">
             <font>
                 <Font name="Cambria" size="20.0" />
             </font>
         </TextArea>
-        <Button layoutX="241.0" layoutY="533.0" mnemonicParsing="false" onAction="#clickTranslate" stylesheets="@Style.css" text="Translate" textFill="WHITE">
+        <Button layoutX="241.0" layoutY="542.0" mnemonicParsing="false" onAction="#clickTranslate" stylesheets="@Style.css" text="Translate" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
@@ -38,8 +38,8 @@
             <String fx:value="selected" />
          </styleClass>
         </Button>
-      <ComboBox fx:id="box2" layoutX="22.0" layoutY="282.0" prefHeight="34.0" prefWidth="184.0" styleClass="box" stylesheets="@Style.css" />
-      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="224.0" layoutY="283.0" onMouseClicked="#clickSpeaker1" pickOnBounds="true" preserveRatio="true">
+      <ComboBox fx:id="box2" layoutX="22.0" layoutY="300.0" prefHeight="34.0" prefWidth="184.0" styleClass="box" stylesheets="@Style.css" />
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="224.0" layoutY="300.0" onMouseClicked="#clickSpeaker1" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/speaker1.png" />
          </image>

@@ -12,7 +12,7 @@
             <children>
                 <Label text="Recent Words" textFill="#f8a02d">
                     <font>
-                        <Font name="Cambria Bold" size="22.0" />
+                        <Font name="Cambria" size="24.0" />
                     </font>
                     <VBox.margin>
                         <Insets top="45.0" />
@@ -31,7 +31,7 @@
                                 <Font name="Cambria" size="20.0" />
                             </font>
                         </TextField>
-                        <Button mnemonicParsing="false" onAction="#clickSearchButton" prefHeight="40.0" prefWidth="90.0" stylesheets="@Style.css" text="Search" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#clickSearchButton" prefHeight="45.0" prefWidth="90.0" stylesheets="@Style.css" text="Search" textFill="WHITE">
                             <font>
                                 <Font name="Cambria" size="20.0" />
                             </font>
