@@ -18,7 +18,7 @@ public class ControllerAdd {
     @FXML
     void clickAddWord(ActionEvent event) {
         int index = listDic.dictionaryLookup(englishWord.getText());
-        if (index != -1 && listDic.getListWord().get(index).getWord_explain().compareTo(vietnameseWord.getText()) == 0) {
+        if (index != -1) {
             Alert.AlertType alertAlertType;
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information");

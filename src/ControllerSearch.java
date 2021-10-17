@@ -36,6 +36,7 @@ public class ControllerSearch implements Initializable {
     @FXML
     void clickSearchButton(ActionEvent event) {
         String target = inputWord.getText();
+        listSearch.setVisible(false);
         int index = listDic.dictionaryLookup(target);
         if (index == -1) {
             outputText.setText("Not found.");

@@ -1,6 +1,5 @@
 .pane {
     -fx-background-color: #0b3d7e;
-    -fx-background-color: #2b579a;
 }
 .transparent {
     -fx-background-color: rgba(0, 0, 0, 0);
@@ -10,11 +9,10 @@
     -fx-background-radius: 100;
 }
 .search-button {
-    -fx-background-color: #a4a0a0;
+    -fx-background-color: #676363;
     -fx-background-radius: 30;
 }
 .selected:hover {
-    -fx-background-color: #666786;
     -fx-background-color: #002050;
 }
 .backgr {

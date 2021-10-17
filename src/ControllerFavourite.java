@@ -3,21 +3,17 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 
-import javax.swing.*;
-import javax.swing.table.JTableHeader;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class ControllerMyWord implements Initializable {
+public class ControllerFavourite implements Initializable {
 
     @FXML
     private TextField WordIn;
@@ -34,7 +30,7 @@ public class ControllerMyWord implements Initializable {
     @FXML
     private TableColumn<Word, String> vietnamese;
 
-    private DictionaryCommandLine dic = new DictionaryCommandLine("listMyWord.txt");
+    private DictionaryCommandLine dic = new DictionaryCommandLine("listFavourite.txt");
     private ObservableList<Word> list = FXCollections.observableArrayList(dic.getListWord());
 
     @FXML
@@ -51,6 +47,16 @@ public class ControllerMyWord implements Initializable {
             listWord.getItems().addAll(dic.getListWord().get(index));
         }
     }
+
+    @FXML
+    public void textChange(KeyEvent event) {
+        if (WordIn.getText().isEmpty()) {
+            list = FXCollections.observableArrayList(dic.getListWord());
+            english.setCellValueFactory(new PropertyValueFactory<Word, String>("word_target"));
+            vietnamese.setCellValueFactory(new PropertyValueFactory<Word, String>("word_explain"));
+            listWord.setItems(list);
+        }
+    }
     @FXML
     void clickDelete(MouseEvent event) {
         delete.setOnMouseClicked(MouseEvent -> {
@@ -65,7 +71,7 @@ public class ControllerMyWord implements Initializable {
                 if (!listWord.getSelectionModel().isEmpty()) {
                     Word w = listWord.getSelectionModel().getSelectedItem();
                     dic.removeWord(w.getWord_target());
-                    dic.dictionaryExportToFile("listMyWord.txt");
+                    dic.dictionaryExportToFile("listFavourite.txt");
                     list.remove(listWord.getSelectionModel().getSelectedItem());
                 }
                 listWord.getSelectionModel().clearSelection();
