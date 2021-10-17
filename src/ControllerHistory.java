@@ -4,6 +4,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.input.KeyEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,6 +47,21 @@ public class ControllerHistory implements Initializable {
 
         treeView.setRoot(root);
         treeView.setShowRoot(false);
+    }
+
+    @FXML
+    public void textChange(KeyEvent event) {
+        if (inputWord.getText().toString().isEmpty()) {
+            TreeItem<String> root = new TreeItem<>("HistoryWords");
+            for (Word w : listHistory.getListWord()) {
+                TreeItem<String> branch = new TreeItem<>(w.getWord_target());
+                TreeItem<String> branchItem = new TreeItem<>(w.printWordExplain());
+                branch.getChildren().add(branchItem);
+                root.getChildren().add(branch);
+            }
+            treeView.setRoot(root);
+            treeView.setShowRoot(false);
+        }
     }
 
     @Override

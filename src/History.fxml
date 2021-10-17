@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerHistory">
+<AnchorPane prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerHistory">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="590.0" styleClass="pane" stylesheets="@Style.css" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -23,7 +23,7 @@
                         <Insets left="25.0" right="25.0" top="35.0" />
                     </VBox.margin>
                     <children>
-                        <TextField fx:id="inputWord" prefHeight="55.0" prefWidth="440.0" promptText="Type here to search" styleClass="transparent" stylesheets="@Style.css">
+                        <TextField fx:id="inputWord" onAction="#clickSearchButton" onKeyReleased="#textChange" prefHeight="55.0" prefWidth="440.0" promptText="Type here to search" styleClass="transparent" stylesheets="@Style.css">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
@@ -49,7 +49,7 @@
         </VBox>
         <HBox layoutX="6.0" layoutY="200.0" prefHeight="400.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
          <children>
-            <TreeView fx:id="treeView" prefHeight="400.0" prefWidth="590.0" showRoot="false" />
+            <TreeView fx:id="treeView" onInputMethodTextChanged="#textChange" prefHeight="400.0" prefWidth="590.0" showRoot="false" />
          </children>
         </HBox>
     </children>

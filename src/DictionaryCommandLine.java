@@ -68,15 +68,11 @@ public class DictionaryCommandLine extends DictionaryManagement {
     }
 
     /** Ver3: Print the list of word_target start with s. */
-    public ArrayList<String> dictionarySearcher() {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        int i = findMinIndex(s);
+    public ArrayList<String> dictionarySearcher(String target) {
+        int i = findMinIndex(target);
         ArrayList<String> list = new ArrayList<>();
-        if (i == -1) {
-            System.out.println("Not found.");
-        } else {
-            while (i < getListWord().size() && getListWord().get(i).getWord_target().startsWith(s)) {
+        if (i != -1) {
+            while (i < getListWord().size() && getListWord().get(i).getWord_target().startsWith(target)) {
                 list.add(getListWord().get(i).getWord_target());
                 i++;
             }

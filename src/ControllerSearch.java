@@ -1,12 +1,22 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import java.util.Optional;
 
-public class ControllerSearch {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Optional;
+import java.util.ResourceBundle;
+
+public class ControllerSearch implements Initializable {
 
     @FXML
     private TextField inputWord;
@@ -18,6 +28,11 @@ public class ControllerSearch {
     private final DictionaryCommandLine listFavourite = new DictionaryCommandLine("listFavourite.txt");
     private static final int NUM_OF_HISTORY = 30;
 
+    private ArrayList<String> listDicSearch = new ArrayList<>();
+    @FXML
+    private ListView<String> listSearch = new ListView<>();
+    private ObservableList<String> list = FXCollections.observableArrayList(listDicSearch);
+
     @FXML
     void clickSearchButton(ActionEvent event) {
         String target = inputWord.getText();
@@ -28,27 +43,8 @@ public class ControllerSearch {
             // Print word_explain at outputText
             Word word = listDic.getListWord().get(listDic.dictionaryLookup(target));
             outputText.setText(word.printWordExplain());
-
-            // Add searched word into listHistory.
-            DictionaryCommandLine listHistory = new DictionaryCommandLine();
-
-            // Find index of target in listHistory.
-            index = -1;
-            for (Word w : listHistory.getListWord()) {
-                if (w.getWord_target().equals(target)) {
-                    index = listHistory.getListWord().indexOf(w);
-                    break;
-                }
-            }
-            if (index == -1) {
-                if (listHistory.getListWord().size() == NUM_OF_HISTORY) {
-                    listHistory.getListWord().remove(NUM_OF_HISTORY - 1);
-                }
-            } else {
-                listHistory.getListWord().remove(index);
-            }
-            listHistory.getListWord().add(0, word);
-            listHistory.dictionaryExportToFile("listHistory.txt");
+            // add word into History
+            addHistory(word);
         }
     }
 
@@ -170,6 +166,50 @@ public class ControllerSearch {
         }
     }
 
+    @FXML
+    public void listView(KeyEvent event) {
+        listDic.dictionarySearcher(inputWord.getText().toString());
+        list = FXCollections.observableArrayList(listDic.dictionarySearcher(inputWord.getText()));
+        listSearch.setItems(list);
+        if (event.getCode() != KeyCode.ENTER) {
+            listSearch.setVisible(true);
+        }
+    }
+
+    @FXML
+    public void search(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            listSearch.setVisible(false);
+            String target = inputWord.getText();
+            int index = listDic.dictionaryLookup(target);
+            if (index == -1) {
+                outputText.setText("Not found");
+            } else {
+                Word word = listDic.getListWord().get(listDic.dictionaryLookup(target));
+                outputText.setText(word.printWordExplain());
+                addHistory(word);
+            }
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        listSearch.setVisible(false);
+        listSearch.setItems(list);
+    }
+
+    @FXML
+    public void selected(Event event) {
+        String selected = listSearch.getSelectionModel().getSelectedItem();
+        if (!selected.isEmpty()) {
+            inputWord.setText(selected);
+            Word word = listDic.getListWord().get(listDic.dictionaryLookup(selected));
+            outputText.setText(word.printWordExplain());
+            addHistory(word);
+            listSearch.setVisible(false);
+        }
+    }
+
     /** Tạo thông báo "message". */
     public void notification (String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -185,5 +225,29 @@ public class ControllerSearch {
         explain = explain.replaceAll("\n", "n*");
         explain = explain.replaceAll("\t", "");
         return explain;
+    }
+
+    /** Add word into listHistory. */
+    public void addHistory(Word word) {
+        // Add searched word into listHistory.
+        DictionaryCommandLine listHistory = new DictionaryCommandLine();
+
+        // Find index of target in listHistory.
+        int index = -1;
+        for (Word w : listHistory.getListWord()) {
+            if (w.getWord_target().equals(word.getWord_target())) {
+                index = listHistory.getListWord().indexOf(w);
+                break;
+            }
+        }
+        if (index == -1) {
+            if (listHistory.getListWord().size() == NUM_OF_HISTORY) {
+                listHistory.getListWord().remove(NUM_OF_HISTORY - 1);
+            }
+        } else {
+            listHistory.getListWord().remove(index);
+        }
+        listHistory.getListWord().add(0, word);
+        listHistory.dictionaryExportToFile("listHistory.txt");
     }
 }
