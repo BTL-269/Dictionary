@@ -3,10 +3,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandLine extends DictionaryManagement {
+
+    public DictionaryCommandLine() {
+        File file = new File("listHistory.txt");
+        if (file.length() != 0) {
+            insertFromFile("listHistory.txt");
+        }
+    }
+
     public DictionaryCommandLine(String filePath) {
         File file = new File(filePath);
         if (file.length() != 0) {
             insertFromFile(filePath);
+            sortListWord();
         }
     }
 
@@ -59,13 +68,11 @@ public class DictionaryCommandLine extends DictionaryManagement {
     }
 
     /** Ver3: Print the list of word_target start with s. */
-    public ArrayList<String> dictionarySearcher(String s) {
-        int i = findMinIndex(s);
+    public ArrayList<String> dictionarySearcher(String target) {
+        int i = findMinIndex(target);
         ArrayList<String> list = new ArrayList<>();
-        if (i == -1) {
-            System.out.println("Not found.");
-        } else {
-            while (i < getListWord().size() && getListWord().get(i).getWord_target().startsWith(s)) {
+        if (i != -1) {
+            while (i < getListWord().size() && getListWord().get(i).getWord_target().startsWith(target)) {
                 list.add(getListWord().get(i).getWord_target());
                 i++;
             }

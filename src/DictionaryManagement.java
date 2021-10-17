@@ -38,7 +38,6 @@ public class DictionaryManagement extends Dictionary {
                 word1 = word2;
             }
             listWord.add(new Word(word1[0], word1[1]));
-            sortListWord();
             buffer.close();
             reader.close();
         } catch (IOException e) {
