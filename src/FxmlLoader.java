@@ -6,6 +6,7 @@ import java.net.URL;
 // Create a class to load multiple stages
 public class FxmlLoader {
     private AnchorPane pane;
+
     // A method to get the stage
     public AnchorPane getPane(String fileFxml) {
         try {

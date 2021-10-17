@@ -5,7 +5,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.KeyEvent;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,7 +19,7 @@ public class ControllerHistory implements Initializable {
     private final DictionaryCommandLine listHistory = new DictionaryCommandLine();
 
     @FXML
-    void clickSearchButton(ActionEvent event) {
+    public void clickSearchButton(ActionEvent event) {
         String target = inputWord.getText();
         TreeItem<String> root = new TreeItem<>("HistoryWords");
 

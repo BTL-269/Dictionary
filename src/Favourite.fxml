@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.image.*?>
-<?import javafx.scene.media.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -54,7 +50,7 @@
                   <Insets left="450.0" top="12.0" />
                </VBox.margin>
                <image>
-                  <Image url="@images/del1.png" />
+                  <Image url="@images/del.png" />
                </image>
             </ImageView>
          </children>

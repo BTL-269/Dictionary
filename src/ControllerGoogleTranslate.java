@@ -20,7 +20,7 @@ public class ControllerGoogleTranslate implements Initializable {
     private ComboBox<String> box1, box2;
 
     @FXML
-    void clickTranslate(ActionEvent event) {
+    public void clickTranslate(ActionEvent event) {
         if (box1.getSelectionModel().isSelected(1)) {
             output.setText(GGTranslate.transText("vi", input.getText()));
         } else  {
@@ -29,14 +29,14 @@ public class ControllerGoogleTranslate implements Initializable {
     }
 
     @FXML
-    void clickSpeaker1() {
+    public void clickSpeaker1() {
         if (box1.getSelectionModel().isSelected(0)) {
             new Audio(output.getText());
         }
     }
 
     @FXML
-    void clickSpeaker2() {
+    public void clickSpeaker2() {
         if (box2.getSelectionModel().isSelected(0)) {
             new Audio(input.getText());
         }

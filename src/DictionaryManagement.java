@@ -6,6 +6,7 @@ public class DictionaryManagement extends Dictionary {
      * Ver 1: Input number of words, target, explain.
      * Add new word into listWord./
      */
+
     public void insertFromCommandLine() {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
@@ -44,11 +45,11 @@ public class DictionaryManagement extends Dictionary {
             System.out.println("Error: " + e);
         }
     }
-
     /**
      * Ver 2: Look up word from the input.
      * @return the index of word in list
      */
+
     public int dictionaryLookup(String word) {
         int left = 0, right = getListWord().size() - 1;
         int mid, result = -1;

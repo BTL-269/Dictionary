@@ -42,6 +42,7 @@ public class ControllerAdd {
             }
         }
     }
+    /** Convert the style of word.*/
 
     public String convertExplain(String explain) {
         explain = explain.replaceAll("\n\t- ", "n-");

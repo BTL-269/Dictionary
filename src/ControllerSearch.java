@@ -10,7 +10,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -27,14 +26,14 @@ public class ControllerSearch implements Initializable {
     private final DictionaryCommandLine listDic = new DictionaryCommandLine("dictionaries.txt");
     private final DictionaryCommandLine listFavourite = new DictionaryCommandLine("listFavourite.txt");
     private static final int NUM_OF_HISTORY = 30;
-
     private ArrayList<String> listDicSearch = new ArrayList<>();
+
     @FXML
     private ListView<String> listSearch = new ListView<>();
     private ObservableList<String> list = FXCollections.observableArrayList(listDicSearch);
 
     @FXML
-    void clickSearchButton(ActionEvent event) {
+    public void clickSearchButton(ActionEvent event) {
         String target = inputWord.getText();
         listSearch.setVisible(false);
         int index = listDic.dictionaryLookup(target);
@@ -50,12 +49,12 @@ public class ControllerSearch implements Initializable {
     }
 
     @FXML
-    void clickSpeaker(MouseEvent event) {
+    public void clickSpeaker(MouseEvent event) {
         Audio audio = new Audio(inputWord.getText());
     }
 
     @FXML
-    void clickEdit(MouseEvent event) {
+    public void clickEdit(MouseEvent event) {
         Alert alert = new Alert(Alert.AlertType.NONE);
         alert.setTitle("Edit Word");
         ButtonType buttonTypeOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
@@ -97,7 +96,7 @@ public class ControllerSearch implements Initializable {
     }
 
     @FXML
-    void clickLike(MouseEvent event) {
+    public void clickLike(MouseEvent event) {
         Alert alert = new Alert(Alert.AlertType.NONE);
         alert.setTitle("Add Word into My Favorite");
         ButtonType buttonTypeOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
@@ -143,7 +142,7 @@ public class ControllerSearch implements Initializable {
     }
 
     @FXML
-    void clickDelete(MouseEvent event) {
+    public void clickDelete(MouseEvent event) {
         String wordDel = inputWord.getText();
         if (wordDel.isEmpty()) {
             notification("You have not entered the word");

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class DictionaryCommandLine extends DictionaryManagement {
 
+    /** Constructor with no param.*/
     public DictionaryCommandLine() {
         File file = new File("listHistory.txt");
         if (file.length() != 0) {
@@ -11,6 +12,7 @@ public class DictionaryCommandLine extends DictionaryManagement {
         }
     }
 
+    /** Constructor with param.*/
     public DictionaryCommandLine(String filePath) {
         File file = new File(filePath);
         if (file.length() != 0) {

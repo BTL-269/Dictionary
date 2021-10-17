@@ -2,6 +2,7 @@ import com.darkprograms.speech.translator.GoogleTranslate;
 
 public class GGTranslate {
 
+    /** Search by Google Translate.*/
     public static String transText(String langOut, String text) {
         String ans = "";
         try {

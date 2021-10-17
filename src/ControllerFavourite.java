@@ -34,7 +34,7 @@ public class ControllerFavourite implements Initializable {
     private ObservableList<Word> list = FXCollections.observableArrayList(dic.getListWord());
 
     @FXML
-    void clickSearchBut(ActionEvent event) {
+    public void clickSearchBut(ActionEvent event) {
         String s = WordIn.getText();
         int index = dic.dictionaryLookup(s);
         if (index == -1) {
@@ -57,8 +57,9 @@ public class ControllerFavourite implements Initializable {
             listWord.setItems(list);
         }
     }
+
     @FXML
-    void clickDelete(MouseEvent event) {
+    public void clickDelete(MouseEvent event) {
         delete.setOnMouseClicked(MouseEvent -> {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Delete Word");

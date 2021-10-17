@@ -10,7 +10,7 @@ public class Word implements Comparable<Word> {
         this.word_target = target;
         this.word_explain = explain;
     }
-    /** Get String of word*/
+    /** Get String of word.*/
     @Override
     public String toString() {
         return (word_target + "          " + word_explain);

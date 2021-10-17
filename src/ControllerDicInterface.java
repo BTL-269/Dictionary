@@ -9,42 +9,42 @@ public class ControllerDicInterface {
     private BorderPane borderPane;
 
     @FXML
-    void clickSearch(ActionEvent event) {
+    public void clickSearch(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
         AnchorPane newPane = loader.getPane("Search.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickFavorite(ActionEvent event) {
+    public void clickFavorite(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
         AnchorPane newPane = loader.getPane("Favourite.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickGoogleTranslate(ActionEvent event) {
+    public void clickGoogleTranslate(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
         AnchorPane newPane = loader.getPane("GoogleTranslate.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickRecent(ActionEvent event) {
+    public void clickRecent(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
         AnchorPane newPane = loader.getPane("History.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickAdd(ActionEvent event) {
+    public void clickAdd(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
         AnchorPane newPane = loader.getPane("Add.fxml");
         borderPane.setCenter(newPane);
     }
 
     @FXML
-    void clickAbout(ActionEvent event) {
+    public void clickAbout(ActionEvent event) {
         FxmlLoader loader = new FxmlLoader();
         AnchorPane newPane = loader.getPane("About.fxml");
         borderPane.setCenter(newPane);
