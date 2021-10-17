@@ -16,7 +16,7 @@
          <children>
             <Label text="My Favorite Words" textFill="#f8a02d">
                <font>
-                  <Font name="Cambria Bold" size="22.0" />
+                  <Font name="Cambria" size="24.0" />
                </font>
                <VBox.margin>
                   <Insets top="30.0" />
@@ -40,7 +40,7 @@
                         <Font name="Cambria" size="20.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="5.0" />
+                        <Insets right="8.0" />
                      </HBox.margin>
                      <styleClass>
                         <String fx:value="search-button" />
@@ -59,6 +59,11 @@
             </ImageView>
          </children>
       </VBox>
-      <ListView fx:id="listWord" fixedCellSize="60.0" layoutX="148.0" layoutY="200.0" prefHeight="400.0" prefWidth="580.0" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+      <TableView fx:id="listWord" fixedCellSize="50.0" layoutX="182.0" layoutY="200.0" prefHeight="400.0" prefWidth="590.0" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+        <columns>
+          <TableColumn fx:id="english" prefWidth="200.0" text="English" />
+          <TableColumn fx:id="vietnamese" minWidth="0.0" prefWidth="390.0" text="Vietnamese" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

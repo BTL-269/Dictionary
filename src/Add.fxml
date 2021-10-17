@@ -14,7 +14,7 @@
          <children>
             <Label text="Enrich Dictionary" textFill="#f8a02d">
                <font>
-                  <Font name="Cambria Bold" size="22.0" />
+                  <Font name="Cambria" size="24.0" />
                </font>
                <VBox.margin>
                   <Insets top="45.0" />

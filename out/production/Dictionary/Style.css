@@ -1,5 +1,6 @@
 .pane {
     -fx-background-color: #0b3d7e;
+    -fx-background-color: #2b579a;
 }
 .transparent {
     -fx-background-color: rgba(0, 0, 0, 0);
@@ -14,8 +15,22 @@
 }
 .selected:hover {
     -fx-background-color: #666786;
+    -fx-background-color: #002050;
 }
-.border {
-    -fx-border-width: 3;
-    -fx-border-color: #0b3d7e;
+.backgr {
+    -fx-background-image: url("images/welcome1.png");
+}
+.backgroundAbout {
+    -fx-background-image: url("images/about2.png");
+}
+.table-view .column-header-background {
+    -fx-background-color: #dcd6d6;
+}
+.table-view .column-header, .table-view .filler {
+    -fx-size: 40;
+    -fx-background-color: transparent;
+}
+.table-view .column-header .label {
+    -fx-font-size: 18;
+    -fx-text-fill: #0b3d7e;
 }

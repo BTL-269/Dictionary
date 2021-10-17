@@ -1,5 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -7,9 +8,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
-import java.util.ArrayList;
-import java.util.EventListener;
-import java.util.Optional;
+import java.net.URL;
+import java.util.*;
 
 public class ControllerSearch {
 
@@ -74,7 +74,7 @@ public class ControllerSearch {
         gird.add(explain, 1, 1);
 
         alert.getDialogPane().setContent(gird);
-        alert.getButtonTypes().setAll(buttonTypeOK , buttonTypeCancel);
+        alert.getButtonTypes().setAll(buttonTypeOK, buttonTypeCancel);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOK) {
             String word_target = target.getText();
@@ -115,7 +115,7 @@ public class ControllerSearch {
         gird.add(explain, 1, 1);
 
         alert.getDialogPane().setContent(gird);
-        alert.getButtonTypes().setAll(buttonTypeOK , buttonTypeCancel);
+        alert.getButtonTypes().setAll(buttonTypeOK, buttonTypeCancel);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOK) {
             String word_target = target.getText();
@@ -164,18 +164,22 @@ public class ControllerSearch {
         }
     }
 
-    /** Tạo thông báo "message". */
-    public void notification (String message) {
+    /**
+     * Tạo thông báo "message".
+     */
+    public void notification(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Notification");
         alert.setHeaderText(message);
         alert.show();
     }
 
-    /** covert Explain to format. */
+    /**
+     * covert Explain to format.
+     */
     public String convertExplain(String explain) {
         explain = explain.replaceAll("\n\t- ", "n-");
-        explain = explain.replaceAll("\n\t\t[+] ","n=");
+        explain = explain.replaceAll("\n\t\t[+] ", "n=");
         explain = explain.replaceAll("\n", "n*");
         explain = explain.replaceAll("\t", "");
         return explain;

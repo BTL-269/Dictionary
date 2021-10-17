@@ -59,9 +59,7 @@ public class DictionaryCommandLine extends DictionaryManagement {
     }
 
     /** Ver3: Print the list of word_target start with s. */
-    public ArrayList<String> dictionarySearcher() {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.next();
+    public ArrayList<String> dictionarySearcher(String s) {
         int i = findMinIndex(s);
         ArrayList<String> list = new ArrayList<>();
         if (i == -1) {
