@@ -36,7 +36,7 @@
                               <Insets left="40.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@images/search1.png" />
+                              <Image url="@images/search.png" />
                            </image>
                         </ImageView>
                         <Button mnemonicParsing="false" onAction="#clickSearch" prefHeight="70.0" prefWidth="195.0" styleClass="transparent" stylesheets="@Style.css" text="Search" textFill="#f8a02d">
@@ -56,7 +56,7 @@
                      <children>
                         <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/star.png" />
+                              <Image url="@images/Star.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="40.0" />
@@ -76,7 +76,7 @@
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/dich2.png" />
+                              <Image url="@images/dich.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="40.0" />
@@ -99,7 +99,7 @@
                               <Insets left="40.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@images/clock1.png" />
+                              <Image url="@images/clock.png" />
                            </image>
                         </ImageView>
                         <Button mnemonicParsing="false" onAction="#clickRecent" prefHeight="70.0" prefWidth="210.0" styleClass="transparent" stylesheets="@Style.css" text="Recent Words" textFill="#f8a02d">
@@ -119,7 +119,7 @@
                      <children>
                         <ImageView fitHeight="55.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/add2.png" />
+                              <Image url="@images/add.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="35.0" />
@@ -139,7 +139,7 @@
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/about1.png" />
+                              <Image url="@images/about.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="40.0" />

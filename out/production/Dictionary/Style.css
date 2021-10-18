@@ -9,17 +9,17 @@
     -fx-background-radius: 100;
 }
 .search-button {
-    -fx-background-color: #676363;
+    -fx-background-color: #696767;
     -fx-background-radius: 30;
 }
 .selected:hover {
     -fx-background-color: #002050;
 }
 .backgr {
-    -fx-background-image: url("images/welcome1.png");
+    -fx-background-image: url("images/welcome.png");
 }
 .backgroundAbout {
-    -fx-background-image: url("images/about2.png");
+    -fx-background-image: url("images/about1.png");
 }
 .table-view .column-header-background {
     -fx-background-color: #dcd6d6;

@@ -16,7 +16,7 @@
       <ComboBox fx:id="box1" layoutX="22.0" layoutY="85.0" prefHeight="34.0" prefWidth="184.0" styleClass="box" stylesheets="@Style.css" AnchorPane.bottomAnchor="479.0" AnchorPane.topAnchor="85.0" />
       <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="224.0" layoutY="86.0" onMouseClicked="#clickSpeaker2" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/speaker1.png" />
+            <Image url="@images/speaker.png" />
          </image>
       </ImageView>
         <TextArea fx:id="input" layoutX="21.0" layoutY="140.0" prefHeight="117.0" prefWidth="541.0" promptText="Type here" styleClass="text" stylesheets="@Style.css" wrapText="true" AnchorPane.bottomAnchor="343.0" AnchorPane.topAnchor="140.0">
@@ -41,7 +41,7 @@
       <ComboBox fx:id="box2" layoutX="22.0" layoutY="300.0" prefHeight="34.0" prefWidth="184.0" styleClass="box" stylesheets="@Style.css" />
       <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="224.0" layoutY="300.0" onMouseClicked="#clickSpeaker1" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/speaker1.png" />
+            <Image url="@images/speaker.png" />
          </image>
       </ImageView>
     </children>

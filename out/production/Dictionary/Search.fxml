@@ -48,7 +48,7 @@
                         <Insets left="40.0" right="115.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@images/speaker1.png" />
+                        <Image url="@images/speaker.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="edit" fitHeight="45.0" fitWidth="40.0" onMouseClicked="#clickEdit" pickOnBounds="true" preserveRatio="true">
@@ -56,7 +56,7 @@
                         <Insets right="115.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@images/edit1.png" />
+                        <Image url="@images/edit.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="like" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#clickLike" pickOnBounds="true" preserveRatio="true">
@@ -64,12 +64,12 @@
                         <Insets right="115.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@images/like1.png" />
+                        <Image url="@images/like.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="delete" fitHeight="45.0" fitWidth="40.0" onMouseClicked="#clickDelete" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/del1.png" />
+                        <Image url="@images/del.png" />
                      </image>
                   </ImageView>
                </children>
